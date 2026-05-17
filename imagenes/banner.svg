@@ -1,163 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1600" height="500" viewBox="0 0 1600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1600" height="500" viewBox="0 0 1600 500" xmlns="http://www.w3.org/2000/svg">
 
   <defs>
 
-    <!-- FONDO -->
-    <linearGradient id="bgGradient" x1="0" y1="0" x2="1600" y2="500">
-      <stop offset="0%" stop-color="#f6ebe6"/>
-      <stop offset="50%" stop-color="#efe3d9"/>
-      <stop offset="100%" stop-color="#dce5d7"/>
+    <!-- FONDO ANIMADO -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f4f2">
+        <animate attributeName="stop-color" values="#f8f4f2;#eef3ee;#f8f4f2" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#e7e2dd">
+        <animate attributeName="stop-color" values="#e7e2dd;#dde6dd;#e7e2dd" dur="10s" repeatCount="indefinite"/>
+      </stop>
     </linearGradient>
 
-    <!-- OLAS -->
-    <linearGradient id="wave1" x1="0" y1="0" x2="1600" y2="0">
-      <stop offset="0%" stop-color="#d8b6b4" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#a7b596" stop-opacity="0.35"/>
-    </linearGradient>
-
-    <linearGradient id="wave2" x1="0" y1="0" x2="1600" y2="0">
-      <stop offset="0%" stop-color="#efd3d1" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#b8c5ad" stop-opacity="0.25"/>
-    </linearGradient>
-
-    <!-- TEXTO -->
-    <linearGradient id="titleGradient" x1="0" y1="0" x2="800" y2="0">
-      <stop offset="0%" stop-color="#5f7055"/>
-      <stop offset="100%" stop-color="#c69d9b"/>
-    </linearGradient>
-
-    <!-- SOMBRA -->
-    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#5f4d43" flood-opacity="0.16"/>
+    <!-- SOMBRA SUAVE -->
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity="0.12"/>
     </filter>
 
     <!-- BLUR -->
     <filter id="blur">
-      <feGaussianBlur stdDeviation="40"/>
+      <feGaussianBlur stdDeviation="55"/>
     </filter>
+
+    <!-- GLASS -->
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.25)"/>
+    </linearGradient>
+
+    <!-- TEXTO MÁS OVALADO -->
+    <linearGradient id="text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4b5a4b"/>
+      <stop offset="100%" stop-color="#b08a87"/>
+    </linearGradient>
 
   </defs>
 
   <!-- FONDO -->
-  <rect width="1600" height="500" fill="url(#bgGradient)"/>
+  <rect width="1600" height="500" fill="url(#bg)"/>
 
-  <!-- BLURS -->
-  <circle cx="240" cy="100" r="170" fill="#d7b8b6" opacity="0.24" filter="url(#blur)">
-    <animate attributeName="cx" values="240;300;240" dur="12s" repeatCount="indefinite"/>
+  <!-- GLOW MOVIL -->
+  <circle cx="250" cy="120" r="180" fill="#d8b9b6" opacity="0.25" filter="url(#blur)">
+    <animate attributeName="cy" values="120;140;120" dur="8s" repeatCount="indefinite"/>
   </circle>
 
-  <circle cx="1360" cy="360" r="210" fill="#a8b69b" opacity="0.22" filter="url(#blur)">
-    <animate attributeName="cy" values="360;320;360" dur="10s" repeatCount="indefinite"/>
+  <circle cx="1350" cy="340" r="220" fill="#b7c6b0" opacity="0.22" filter="url(#blur)">
+    <animate attributeName="cy" values="340;310;340" dur="9s" repeatCount="indefinite"/>
   </circle>
 
-  <!-- OLAS ANIMADAS -->
+  <!-- PARTICULAS -->
+  <g opacity="0.5">
 
-  <path fill="url(#wave1)">
-    <animate attributeName="d"
-      dur="14s"
-      repeatCount="indefinite"
-      values="
-      M0 320C180 250 320 400 560 350C760 308 930 210 1150 260C1370 312 1480 410 1600 350V500H0V320Z;
-      M0 340C220 280 390 410 610 340C850 260 980 230 1190 300C1410 370 1510 390 1600 320V500H0V340Z;
-      M0 300C160 220 350 390 580 330C810 270 980 210 1200 250C1410 290 1500 380 1600 340V500H0V300Z;
-      M0 320C180 250 320 400 560 350C760 308 930 210 1150 260C1370 312 1480 410 1600 350V500H0V320Z
-      "/>
-  </path>
-
-  <path fill="url(#wave2)">
-    <animate attributeName="d"
-      dur="18s"
-      repeatCount="indefinite"
-      values="
-      M0 360C240 270 420 430 670 370C890 320 1060 250 1270 310C1450 360 1530 390 1600 340V500H0V360Z;
-      M0 340C250 240 470 410 700 340C930 280 1100 270 1310 340C1470 390 1540 360 1600 320V500H0V340Z;
-      M0 380C260 300 450 440 680 390C930 330 1080 240 1280 290C1450 340 1520 370 1600 330V500H0V380Z;
-      M0 360C240 270 420 430 670 370C890 320 1060 250 1270 310C1450 360 1530 390 1600 340V500H0V360Z
-      "/>
-  </path>
-
-  <!-- DETALLES FLOTANTES -->
-
-  <g opacity="0.42">
-
-    <circle cx="300" cy="180" r="10" fill="#c69d9b">
-      <animate attributeName="cy" values="180;160;180" dur="6s" repeatCount="indefinite"/>
+    <circle cx="320" cy="160" r="6" fill="#caa7a4">
+      <animate attributeName="cy" values="160;140;160" dur="5s" repeatCount="indefinite"/>
     </circle>
 
-    <circle cx="1220" cy="130" r="11" fill="#93a285">
-      <animate attributeName="cy" values="130;110;130" dur="5s" repeatCount="indefinite"/>
+    <circle cx="1180" cy="120" r="7" fill="#9fb29a">
+      <animate attributeName="cy" values="120;100;120" dur="6s" repeatCount="indefinite"/>
     </circle>
 
-    <circle cx="1390" cy="240" r="7" fill="#d7b8b6">
-      <animate attributeName="cy" values="240;220;240" dur="4s" repeatCount="indefinite"/>
+    <circle cx="980" cy="220" r="5" fill="#d8b9b6">
+      <animate attributeName="cy" values="220;200;220" dur="4s" repeatCount="indefinite"/>
     </circle>
 
-    <circle cx="530" cy="110" r="8" fill="#93a285">
-      <animate attributeName="cy" values="110;90;110" dur="7s" repeatCount="indefinite"/>
+    <circle cx="520" cy="100" r="5" fill="#9fb29a">
+      <animate attributeName="cy" values="100;80;100" dur="7s" repeatCount="indefinite"/>
     </circle>
 
   </g>
 
-  <!-- CONTENIDO -->
+  <!-- ONDA PRINCIPAL -->
+  <path d="M0,340 C250,260 450,420 800,340 C1150,260 1350,420 1600,340 L1600,500 L0,500 Z"
+        fill="#d8c4c1" opacity="0.25">
+    <animate attributeName="d"
+      dur="12s"
+      repeatCount="indefinite"
+      values="
+      M0,340 C250,260 450,420 800,340 C1150,260 1350,420 1600,340 L1600,500 L0,500 Z;
+      M0,360 C300,280 500,410 800,360 C1100,290 1300,400 1600,350 L1600,500 L0,500 Z;
+      M0,330 C220,250 480,390 800,350 C1120,310 1340,420 1600,330 L1600,500 L0,500 Z;
+      M0,340 C250,260 450,420 800,340 C1150,260 1350,420 1600,340 L1600,500 L0,500 Z
+      "/>
+  </path>
 
-  <g transform="translate(160 90)">
+  <!-- CONTENIDO -->
+  <g transform="translate(160 110)">
 
     <!-- CIRCULO -->
-    <circle cx="120" cy="120" r="98"
-            fill="rgba(255,255,255,0.45)"
+    <circle cx="120" cy="120" r="96"
+            fill="url(#glass)"
             stroke="rgba(255,255,255,0.6)"
-            stroke-width="2"
-            filter="url(#shadow)"/>
+            stroke-width="1.5"
+            filter="url(#shadow)">
+
+      <animate attributeName="r"
+               values="96;100;96"
+               dur="6s"
+               repeatCount="indefinite"/>
+    </circle>
 
     <!-- LOGO -->
     <image href="imgs/logo.png"
-           x="48"
-           y="48"
-           width="144"
-           height="144"
-           preserveAspectRatio="xMidYMid meet">
+           x="55" y="55"
+           width="130" height="130">
 
-      <animateTransform
-        attributeName="transform"
-        type="translate"
-        values="0 0; 0 -8; 0 0"
-        dur="5s"
-        repeatCount="indefinite"/>
-
+      <animateTransform attributeName="transform"
+                        type="translate"
+                        values="0 0; 0 -8; 0 0"
+                        dur="5s"
+                        repeatCount="indefinite"/>
     </image>
 
-    <!-- TITULO -->
-    <text x="290"
-          y="145"
-          fill="url(#titleGradient)"
-          font-size="96"
-          font-family="'Baloo 2', sans-serif"
-          font-weight="700"
-          letter-spacing="1.5">
+    <!-- TITULO (más redondeado vibe) -->
+    <text x="270" y="145"
+          fill="url(#text)"
+          font-size="92"
+          font-family="Nunito, Quicksand, Poppins, sans-serif"
+          font-weight="800"
+          letter-spacing="1">
 
       Almendra
 
-      <animateTransform
-        attributeName="transform"
-        type="translate"
-        values="0 0; 0 -2; 0 0"
-        dur="6s"
-        repeatCount="indefinite"/>
-
+      <animateTransform attributeName="transform"
+                        type="translate"
+                        values="0 0; 0 -3; 0 0"
+                        dur="5s"
+                        repeatCount="indefinite"/>
     </text>
 
     <!-- SUBTITULO -->
-    <text x="292"
-          y="205"
-          fill="#697264"
-          font-size="30"
-          font-family="'DM Sans', sans-serif"
+    <text x="272" y="205"
+          fill="#6f7a6f"
+          font-size="28"
+          font-family="Nunito, sans-serif"
           font-weight="500"
-          letter-spacing="3">
+          letter-spacing="2">
 
-      diseño frontend • experiencia de usuario
+      diseño frontend · experiencia de usuario
 
+      <animate attributeName="opacity"
+               values="0.7;1;0.7"
+               dur="6s"
+               repeatCount="indefinite"/>
     </text>
 
   </g>
