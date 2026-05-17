@@ -1,0 +1,110 @@
+```svg
+<svg width="1600" height="500" viewBox="0 0 1600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5f0ea"/>
+      <stop offset="1" stop-color="#efe7dd"/>
+    </linearGradient>
+
+    <radialGradient id="pinkBlur" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(350 120) rotate(90) scale(220)">
+      <stop stop-color="#d7b8b6" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#d7b8b6" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="greenBlur" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(1280 390) rotate(90) scale(240)">
+      <stop stop-color="#95a27e" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#95a27e" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="shadow" x="0" y="0" width="200%" height="200%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="500" rx="40" fill="url(#bg)"/>
+
+  <circle cx="350" cy="120" r="220" fill="url(#pinkBlur)"/>
+  <circle cx="1280" cy="390" r="240" fill="url(#greenBlur)"/>
+
+  <g opacity="0.12">
+    <circle cx="220" cy="410" r="4" fill="#5f7055"/>
+    <circle cx="320" cy="360" r="4" fill="#5f7055"/>
+    <circle cx="420" cy="400" r="4" fill="#5f7055"/>
+    <circle cx="520" cy="340" r="4" fill="#5f7055"/>
+
+    <line x1="220" y1="410" x2="320" y2="360" stroke="#5f7055" stroke-width="2"/>
+    <line x1="320" y1="360" x2="420" y2="400" stroke="#5f7055" stroke-width="2"/>
+    <line x1="420" y1="400" x2="520" y2="340" stroke="#5f7055" stroke-width="2"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="950" y="75" width="360" height="350" rx="34" fill="rgba(255,255,255,0.55)"/>
+  </g>
+
+  <image href="imgs/logo.png" x="1060" y="115" width="140" height="140"/>
+
+  <text x="140" y="200"
+    fill="#5d4035"
+    font-size="88"
+    font-family="Baloo 2, sans-serif"
+    font-weight="700">
+    ALMENDRA
+  </text>
+
+  <text x="145" y="265"
+    fill="#5f7055"
+    font-size="34"
+    font-family="Cormorant Garamond, serif"
+    letter-spacing="2">
+    pastelería artesanal
+  </text>
+
+  <text x="145" y="340"
+    fill="#4a4744"
+    font-size="28"
+    font-family="DM Sans, sans-serif">
+    Diseño frontend cálido, moderno y editorial
+  </text>
+
+  <text x="145" y="385"
+    fill="#4a4744"
+    font-size="28"
+    font-family="DM Sans, sans-serif">
+    inspirado en branding gastronómico real.
+  </text>
+
+  <g>
+    <rect x="1020" y="285" width="220" height="54" rx="999" fill="#5f7055"/>
+
+    <text x="1090" y="320"
+      fill="#ffffff"
+      font-size="24"
+      font-family="DM Sans, sans-serif"
+      font-weight="700">
+      Frontend UI
+    </text>
+  </g>
+
+  <g opacity="0.18">
+    <circle cx="1380" cy="110" r="10" fill="#5f7055"/>
+    <circle cx="1420" cy="140" r="6" fill="#d7b8b6"/>
+    <circle cx="1455" cy="100" r="4" fill="#5f7055"/>
+  </g>
+
+</svg>
+```
+
+Guardalo como:
+
+`bannerREADME.svg`
+
+Y en el README usá:
+
+```md
+<p align="center">
+  <img src="bannerREADME.svg" alt="Almendra Banner"/>
+</p>
+```
