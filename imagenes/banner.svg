@@ -101,7 +101,7 @@
     </circle>
 
     <!-- LOGO -->
-    <image href="./imgs/logo.png"
+    <image href="../imgs/logo.png"
            x="55" y="55"
            width="130" height="130">
 
