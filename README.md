@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Imagenes/banner.svg" alt="Renata Gallucci Banner"/>
+  <img src="imagenes/banner.svg" alt="Renata Gallucci Banner"/>
 </p>
 
 <p align="center">
