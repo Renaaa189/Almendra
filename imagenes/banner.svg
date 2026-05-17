@@ -1,95 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1600" height="500" viewBox="0 0 1600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
 
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="500" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f5f0ea"/>
-      <stop offset="1" stop-color="#efe7dd"/>
+
+    <!-- FONDO -->
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1600" y2="500">
+      <stop offset="0%" stop-color="#f6ebe6"/>
+      <stop offset="50%" stop-color="#efe3d9"/>
+      <stop offset="100%" stop-color="#dce5d7"/>
     </linearGradient>
 
-    <radialGradient id="pinkBlur" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-      gradientTransform="translate(350 120) rotate(90) scale(220)">
-      <stop stop-color="#d7b8b6" stop-opacity="0.65"/>
-      <stop offset="1" stop-color="#d7b8b6" stop-opacity="0"/>
-    </radialGradient>
+    <!-- OLAS -->
+    <linearGradient id="wave1" x1="0" y1="0" x2="1600" y2="0">
+      <stop offset="0%" stop-color="#d8b6b4" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#a7b596" stop-opacity="0.35"/>
+    </linearGradient>
 
-    <radialGradient id="greenBlur" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-      gradientTransform="translate(1280 390) rotate(90) scale(240)">
-      <stop stop-color="#95a27e" stop-opacity="0.45"/>
-      <stop offset="1" stop-color="#95a27e" stop-opacity="0"/>
-    </radialGradient>
+    <linearGradient id="wave2" x1="0" y1="0" x2="1600" y2="0">
+      <stop offset="0%" stop-color="#efd3d1" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#b8c5ad" stop-opacity="0.25"/>
+    </linearGradient>
 
-    <filter id="shadow" x="0" y="0" width="200%" height="200%">
-      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.10"/>
+    <!-- TEXTO -->
+    <linearGradient id="titleGradient" x1="0" y1="0" x2="800" y2="0">
+      <stop offset="0%" stop-color="#5f7055"/>
+      <stop offset="100%" stop-color="#c69d9b"/>
+    </linearGradient>
+
+    <!-- SOMBRA -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#5f4d43" flood-opacity="0.16"/>
     </filter>
+
+    <!-- BLUR -->
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+
   </defs>
 
-  <rect width="1600" height="500" rx="40" fill="url(#bg)"/>
+  <!-- FONDO -->
+  <rect width="1600" height="500" fill="url(#bgGradient)"/>
 
-  <circle cx="350" cy="120" r="220" fill="url(#pinkBlur)"/>
-  <circle cx="1280" cy="390" r="240" fill="url(#greenBlur)"/>
+  <!-- BLURS -->
+  <circle cx="240" cy="100" r="170" fill="#d7b8b6" opacity="0.24" filter="url(#blur)">
+    <animate attributeName="cx" values="240;300;240" dur="12s" repeatCount="indefinite"/>
+  </circle>
 
-  <g opacity="0.12">
-    <circle cx="220" cy="410" r="4" fill="#5f7055"/>
-    <circle cx="320" cy="360" r="4" fill="#5f7055"/>
-    <circle cx="420" cy="400" r="4" fill="#5f7055"/>
-    <circle cx="520" cy="340" r="4" fill="#5f7055"/>
+  <circle cx="1360" cy="360" r="210" fill="#a8b69b" opacity="0.22" filter="url(#blur)">
+    <animate attributeName="cy" values="360;320;360" dur="10s" repeatCount="indefinite"/>
+  </circle>
 
-    <line x1="220" y1="410" x2="320" y2="360" stroke="#5f7055" stroke-width="2"/>
-    <line x1="320" y1="360" x2="420" y2="400" stroke="#5f7055" stroke-width="2"/>
-    <line x1="420" y1="400" x2="520" y2="340" stroke="#5f7055" stroke-width="2"/>
+  <!-- OLAS ANIMADAS -->
+
+  <path fill="url(#wave1)">
+    <animate attributeName="d"
+      dur="14s"
+      repeatCount="indefinite"
+      values="
+      M0 320C180 250 320 400 560 350C760 308 930 210 1150 260C1370 312 1480 410 1600 350V500H0V320Z;
+      M0 340C220 280 390 410 610 340C850 260 980 230 1190 300C1410 370 1510 390 1600 320V500H0V340Z;
+      M0 300C160 220 350 390 580 330C810 270 980 210 1200 250C1410 290 1500 380 1600 340V500H0V300Z;
+      M0 320C180 250 320 400 560 350C760 308 930 210 1150 260C1370 312 1480 410 1600 350V500H0V320Z
+      "/>
+  </path>
+
+  <path fill="url(#wave2)">
+    <animate attributeName="d"
+      dur="18s"
+      repeatCount="indefinite"
+      values="
+      M0 360C240 270 420 430 670 370C890 320 1060 250 1270 310C1450 360 1530 390 1600 340V500H0V360Z;
+      M0 340C250 240 470 410 700 340C930 280 1100 270 1310 340C1470 390 1540 360 1600 320V500H0V340Z;
+      M0 380C260 300 450 440 680 390C930 330 1080 240 1280 290C1450 340 1520 370 1600 330V500H0V380Z;
+      M0 360C240 270 420 430 670 370C890 320 1060 250 1270 310C1450 360 1530 390 1600 340V500H0V360Z
+      "/>
+  </path>
+
+  <!-- DETALLES FLOTANTES -->
+
+  <g opacity="0.42">
+
+    <circle cx="300" cy="180" r="10" fill="#c69d9b">
+      <animate attributeName="cy" values="180;160;180" dur="6s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="1220" cy="130" r="11" fill="#93a285">
+      <animate attributeName="cy" values="130;110;130" dur="5s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="1390" cy="240" r="7" fill="#d7b8b6">
+      <animate attributeName="cy" values="240;220;240" dur="4s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="530" cy="110" r="8" fill="#93a285">
+      <animate attributeName="cy" values="110;90;110" dur="7s" repeatCount="indefinite"/>
+    </circle>
+
   </g>
 
-  <g filter="url(#shadow)">
-    <rect x="950" y="75" width="360" height="350" rx="34" fill="rgba(255,255,255,0.55)"/>
-  </g>
+  <!-- CONTENIDO -->
 
-  <image href="imgs/logo.png" x="1060" y="115" width="140" height="140"/>
+  <g transform="translate(160 90)">
 
-  <text x="140" y="200"
-    fill="#5d4035"
-    font-size="88"
-    font-family="Baloo 2, sans-serif"
-    font-weight="700">
-    ALMENDRA
-  </text>
+    <!-- CIRCULO -->
+    <circle cx="120" cy="120" r="98"
+            fill="rgba(255,255,255,0.45)"
+            stroke="rgba(255,255,255,0.6)"
+            stroke-width="2"
+            filter="url(#shadow)"/>
 
-  <text x="145" y="265"
-    fill="#5f7055"
-    font-size="34"
-    font-family="Cormorant Garamond, serif"
-    letter-spacing="2">
-    pastelería artesanal
-  </text>
+    <!-- LOGO -->
+    <image href="imgs/logo.png"
+           x="48"
+           y="48"
+           width="144"
+           height="144"
+           preserveAspectRatio="xMidYMid meet">
 
-  <text x="145" y="340"
-    fill="#4a4744"
-    font-size="28"
-    font-family="DM Sans, sans-serif">
-    Diseño frontend cálido, moderno y editorial
-  </text>
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0; 0 -8; 0 0"
+        dur="5s"
+        repeatCount="indefinite"/>
 
-  <text x="145" y="385"
-    fill="#4a4744"
-    font-size="28"
-    font-family="DM Sans, sans-serif">
-    inspirado en branding gastronómico real.
-  </text>
+    </image>
 
-  <g>
-    <rect x="1020" y="285" width="220" height="54" rx="999" fill="#5f7055"/>
+    <!-- TITULO -->
+    <text x="290"
+          y="145"
+          fill="url(#titleGradient)"
+          font-size="96"
+          font-family="'Baloo 2', sans-serif"
+          font-weight="700"
+          letter-spacing="1.5">
 
-    <text x="1090" y="320"
-      fill="#ffffff"
-      font-size="24"
-      font-family="DM Sans, sans-serif"
-      font-weight="700">
-      Frontend UI
+      Almendra
+
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0; 0 -2; 0 0"
+        dur="6s"
+        repeatCount="indefinite"/>
+
     </text>
+
+    <!-- SUBTITULO -->
+    <text x="292"
+          y="205"
+          fill="#697264"
+          font-size="30"
+          font-family="'DM Sans', sans-serif"
+          font-weight="500"
+          letter-spacing="3">
+
+      diseño frontend • experiencia de usuario
+
+    </text>
+
   </g>
 
-  <g opacity="0.18">
-    <circle cx="1380" cy="110" r="10" fill="#5f7055"/>
-    <circle cx="1420" cy="140" r="6" fill="#d7b8b6"/>
-    <circle cx="1455" cy="100" r="4" fill="#5f7055"/>
-  </g>
-
+</svg>
