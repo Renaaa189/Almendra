@@ -13,7 +13,7 @@
       </stop>
     </linearGradient>
 
-    <!-- SOMBRA SUAVE -->
+    <!-- SOMBRA -->
     <filter id="shadow">
       <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity="0.12"/>
     </filter>
@@ -29,7 +29,7 @@
       <stop offset="100%" stop-color="rgba(255,255,255,0.25)"/>
     </linearGradient>
 
-    <!-- TEXTO MÁS OVALADO -->
+    <!-- TEXTO -->
     <linearGradient id="text" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#4b5a4b"/>
       <stop offset="100%" stop-color="#b08a87"/>
@@ -40,7 +40,7 @@
   <!-- FONDO -->
   <rect width="1600" height="500" fill="url(#bg)"/>
 
-  <!-- GLOW MOVIL -->
+  <!-- GLOW -->
   <circle cx="250" cy="120" r="180" fill="#d8b9b6" opacity="0.25" filter="url(#blur)">
     <animate attributeName="cy" values="120;140;120" dur="8s" repeatCount="indefinite"/>
   </circle>
@@ -49,28 +49,7 @@
     <animate attributeName="cy" values="340;310;340" dur="9s" repeatCount="indefinite"/>
   </circle>
 
-  <!-- PARTICULAS -->
-  <g opacity="0.5">
-
-    <circle cx="320" cy="160" r="6" fill="#caa7a4">
-      <animate attributeName="cy" values="160;140;160" dur="5s" repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="1180" cy="120" r="7" fill="#9fb29a">
-      <animate attributeName="cy" values="120;100;120" dur="6s" repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="980" cy="220" r="5" fill="#d8b9b6">
-      <animate attributeName="cy" values="220;200;220" dur="4s" repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="520" cy="100" r="5" fill="#9fb29a">
-      <animate attributeName="cy" values="100;80;100" dur="7s" repeatCount="indefinite"/>
-    </circle>
-
-  </g>
-
-  <!-- ONDA PRINCIPAL -->
+  <!-- ONDA -->
   <path d="M0,340 C250,260 450,420 800,340 C1150,260 1350,420 1600,340 L1600,500 L0,500 Z"
         fill="#d8c4c1" opacity="0.25">
     <animate attributeName="d"
@@ -87,7 +66,7 @@
   <!-- CONTENIDO -->
   <g transform="translate(160 110)">
 
-    <!-- CIRCULO -->
+    <!-- CÍRCULO -->
     <circle cx="120" cy="120" r="96"
             fill="url(#glass)"
             stroke="rgba(255,255,255,0.6)"
@@ -100,10 +79,11 @@
                repeatCount="indefinite"/>
     </circle>
 
-    <!-- LOGO -->
+    <!-- LOGO (ARREGLADO) -->
     <image href="../imgs/logo.png"
            x="55" y="55"
-           width="130" height="130">
+           width="130" height="130"
+           preserveAspectRatio="xMidYMid meet">
 
       <animateTransform attributeName="transform"
                         type="translate"
@@ -112,21 +92,14 @@
                         repeatCount="indefinite"/>
     </image>
 
-    <!-- TITULO (más redondeado vibe) -->
+    <!-- TITULO -->
     <text x="270" y="145"
           fill="url(#text)"
           font-size="92"
           font-family="Nunito, Quicksand, Poppins, sans-serif"
-          font-weight="800"
-          letter-spacing="1">
+          font-weight="800">
 
       Almendra
-
-      <animateTransform attributeName="transform"
-                        type="translate"
-                        values="0 0; 0 -3; 0 0"
-                        dur="5s"
-                        repeatCount="indefinite"/>
     </text>
 
     <!-- SUBTITULO -->
@@ -138,11 +111,6 @@
           letter-spacing="2">
 
       diseño frontend · experiencia de usuario
-
-      <animate attributeName="opacity"
-               values="0.7;1;0.7"
-               dur="6s"
-               repeatCount="indefinite"/>
     </text>
 
   </g>
