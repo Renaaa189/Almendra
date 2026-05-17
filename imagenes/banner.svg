@@ -1,4 +1,3 @@
-```svg
 <svg width="1600" height="500" viewBox="0 0 1600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
 
   <defs>
@@ -94,17 +93,3 @@
     <circle cx="1455" cy="100" r="4" fill="#5f7055"/>
   </g>
 
-</svg>
-```
-
-Guardalo como:
-
-`bannerREADME.svg`
-
-Y en el README usá:
-
-```md
-<p align="center">
-  <img src="bannerREADME.svg" alt="Almendra Banner"/>
-</p>
-```
