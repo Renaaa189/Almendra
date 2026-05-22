@@ -1,108 +1,166 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1600" height="500" viewBox="0 0 1600 500" xmlns="http://www.w3.org/2000/svg">
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 450" width="100%" height="100%">
   <defs>
+    <!-- Importación de la tipografía Outfit desde Google Fonts -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap');
 
-    <!-- FONDO -->
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f8f4f2"/>
-      <stop offset="100%" stop-color="#e7e2dd"/>
-    </linearGradient>
+      .brand-title {
+        font-family: 'Outfit', sans-serif;
+        font-size: 125px;
+        font-weight: 700;
+        fill: #261E1A;
+        letter-spacing: -1px;
+      }
+      .brand-tag {
+        font-family: 'Outfit', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        fill: #6E5D53;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+      }
 
-    <!-- SOMBRA SUAVE -->
-    <filter id="shadow">
-      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.12"/>
+      /* --- ANIMACIONES DE ALTA MOVILIDAD Y OSCILACIÓN LÍQUIDA --- */
+      
+      /* Olas principales con curvas fluidas y amplio oleaje */
+      @keyframes liquidFlowOne {
+        0% { d: path('M-100,210 Q200,80 600,230 T1500,160 L1500,450 L-100,450 Z'); }
+        50% { d: path('M-100,160 Q350,290 700,130 T1500,220 L1500,450 L-100,450 Z'); }
+        100% { d: path('M-100,210 Q200,80 600,230 T1500,160 L1500,450 L-100,450 Z'); }
+      }
+      @keyframes liquidFlowTwo {
+        0% { d: path('M-100,280 Q300,160 750,290 T1500,210 L1500,450 L-100,450 Z'); }
+        50% { d: path('M-100,220 Q450,340 800,180 T1500,270 L1500,450 L-100,450 Z'); }
+        100% { d: path('M-100,280 Q300,160 750,290 T1500,210 L1500,450 L-100,450 Z'); }
+      }
+      @keyframes liquidFlowThree {
+        0% { d: path('M-100,340 Q400,240 850,350 T1500,290 L1500,450 L-100,450 Z'); }
+        50% { d: path('M-100,300 Q300,390 650,260 T1500,330 L1500,450 L-100,450 Z'); }
+        100% { d: path('M-100,340 Q400,240 850,350 T1500,290 L1500,450 L-100,450 Z'); }
+      }
+      
+      .anim-wave-1 { animation: liquidFlowOne 10s ease-in-out infinite; }
+      .anim-wave-2 { animation: liquidFlowTwo 14s ease-in-out infinite; }
+      .anim-wave-3 { animation: liquidFlowThree 18s ease-in-out infinite; }
+
+      /* Flotación suave y orgánica para las esferas/círculos abstractos */
+      @keyframes softCircleFloat {
+        0% { transform: translate(0px, 0px); }
+        50% { transform: translate(20px, -25px); }
+        100% { transform: translate(0px, 0px); }
+      }
+      @keyframes softCircleFloatBack {
+        0% { transform: translate(0px, 0px); }
+        50% { transform: translate(-25px, 15px); }
+        100% { transform: translate(0px, 0px); }
+      }
+      .anim-circle-left { animation: softCircleFloat 12s ease-in-out infinite; }
+      .anim-circle-right { animation: softCircleFloatBack 15s ease-in-out infinite; }
+
+      /* Flotación de partículas */
+      @keyframes drift {
+        0% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+        50% { transform: translateY(-35px) translateX(20px); opacity: 0.8; }
+        100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+      }
+      .p-1 { animation: drift 8s ease-in-out infinite; }
+      .p-2 { animation: drift 11s ease-in-out infinite 1s; }
+    </style>
+
+    <!-- Desenfoque de ambiente -->
+    <filter id="glow-blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="55" />
     </filter>
 
+    <!-- Textura granulada de papel artesanal sutil -->
+    <filter id="paper-texture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.022 0" />
+      <feComposite operator="in" in2="SourceGraphic" />
+    </filter>
+
+    <!-- Gradiente de fondo cálido -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2" />
+      <stop offset="100%" stop-color="#EFE4D6" />
+    </linearGradient>
+
+    <!-- Paleta de Olas (Lino suave y dos tonos de Rosa Bebé) -->
+    <linearGradient id="wave-lino" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E8DCcc" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#D9C7B2" stop-opacity="0.5" />
+    </linearGradient>
+    <linearGradient id="wave-pink-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FDF1EE" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#F7DCD6" stop-opacity="0.65" />
+    </linearGradient>
+    <linearGradient id="wave-pink-main" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FCEAE6" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#F3D1C9" stop-opacity="0.8" />
+    </linearGradient>
   </defs>
 
-  <!-- FONDO -->
-  <rect width="1600" height="500" fill="url(#bg)"/>
+  <!-- Fondo Base -->
+  <rect width="1400" height="450" fill="url(#bg-gradient)" />
 
-  <!-- BOLAS LATERALES (NUEVO) -->
-  <g opacity="0.4">
-    <circle cx="60" cy="120" r="10" fill="#caa7a4">
-      <animate attributeName="cy" values="120;180;120" dur="6s" repeatCount="indefinite"/>
-    </circle>
+  <!-- Iluminación de atmósfera Rosa Bebé de fondo -->
+  <circle cx="300" cy="150" r="280" fill="#FCEAE6" opacity="0.85" filter="url(#glow-blur)" />
+  <circle cx="1100" cy="200" r="250" fill="#FDF1EE" opacity="0.6" filter="url(#glow-blur)" />
 
-    <circle cx="1500" cy="160" r="14" fill="#b7c6b0">
-      <animate attributeName="cy" values="160;220;160" dur="7s" repeatCount="indefinite"/>
-    </circle>
+  <!-- ================= CAPAS DE OLAS CON COHERENCIA DE COLOR ================= -->
+  <!-- Onda trasera (Lino base) -->
+  <path d="M-100,210 Q200,80 600,230 T1500,160 L1500,450 L-100,450 Z" fill="url(#wave-lino)" class="anim-wave-1" />
+  
+  <!-- Onda intermedia (Rosa Bebé Suave) -->
+  <path d="M-100,280 Q300,160 750,290 T1500,210 L1500,450 L-100,450 Z" fill="url(#wave-pink-light)" class="anim-wave-2" />
+  
+  <!-- Onda delantera (Rosa Bebé Principal) -->
+  <path d="M-100,340 Q400,240 850,350 T1500,290 L1500,450 L-100,450 Z" fill="url(#wave-pink-main)" class="anim-wave-3" />
 
-    <circle cx="80" cy="320" r="8" fill="#d8c4c1">
-      <animate attributeName="cy" values="320;380;320" dur="5.5s" repeatCount="indefinite"/>
-    </circle>
+  <!-- Líneas cinéticas finas -->
+  <path d="M-100,160 Q450,290 850,120 T1500,210" fill="none" stroke="#B0A093" stroke-width="0.75" opacity="0.2" />
+  <path d="M-100,190 Q350,330 750,160 T1500,260" fill="none" stroke="#F3D1C9" stroke-width="1" opacity="0.4" />
 
-    <circle cx="1520" cy="340" r="9" fill="#9fb29a">
-      <animate attributeName="cy" values="340;280;340" dur="6.5s" repeatCount="indefinite"/>
-    </circle>
+  <!-- ================= ELEMENTOS GEOMÉTRICOS CÍRCULOS (MINIMALISMO) ================= -->
+  <!-- Esfera flotante izquierda en composición rosa -->
+  <g class="anim-circle-left">
+    <circle cx="180" cy="110" r="50" fill="#F3D1C9" opacity="0.8" />
+    <circle cx="180" cy="110" r="60" fill="none" stroke="#DCAFAA" stroke-width="1" opacity="0.3" stroke-dasharray="4 4" />
+    <circle cx="155" cy="85" r="4" fill="#FAF7F2" opacity="0.6" />
   </g>
 
-  <!-- BURBUJAS CENTRALES -->
-  <g opacity="0.55">
-
-    <circle cx="200" cy="450" r="6" fill="#d8b9b6">
-      <animate attributeName="cy" values="450;50" dur="8s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.6;0" dur="8s" repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="520" cy="460" r="7" fill="#d8c4c1">
-      <animate attributeName="cy" values="460;30" dur="9s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.6;0" dur="9s" repeatCount="indefinite"/>
-    </circle>
-
-    <circle cx="1100" cy="470" r="6" fill="#caa7a4">
-      <animate attributeName="cy" values="470;60" dur="8.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.6;0" dur="8.5s" repeatCount="indefinite"/>
-    </circle>
-
+  <!-- Esfera flotante derecha -->
+  <g class="anim-circle-right">
+    <circle cx="1220" cy="160" r="35" fill="#EADBC8" opacity="0.7" />
+    <circle cx="1220" cy="160" r="20" fill="none" stroke="#FAF7F2" stroke-width="1.25" opacity="0.5" />
   </g>
 
-  <!-- OLA CON MOVIMIENTO (MEJORADA) -->
-  <path d="M0,340 C250,260 450,420 800,340 C1150,260 1350,420 1600,340 
-           L1600,500 L0,500 Z"
-        fill="#d8c4c1" opacity="0.25">
-
-    <animate attributeName="d"
-      dur="8s"
-      repeatCount="indefinite"
-      values="
-      M0,340 C250,260 450,420 800,340 C1150,260 1350,420 1600,340 L1600,500 L0,500 Z;
-      M0,350 C250,300 450,380 800,350 C1150,320 1350,380 1600,350 L1600,500 L0,500 Z;
-      M0,340 C250,260 450,420 800,340 C1150,260 1350,420 1600,340 L1600,500 L0,500 Z
-      "/>
-  </path>
-
-  <!-- CONTENIDO -->
-  <g transform="translate(160 110)">
-
-    <!-- LOGO -->
-    <image href="../imgs/logo.png"
-           x="60" y="60"
-           width="130" height="130"
-           preserveAspectRatio="xMidYMid meet">
-    </image>
-
-    <!-- TITULO -->
-    <text x="270" y="145"
-          fill="#4b5a4b"
-          font-size="92"
-          font-family="Nunito, Quicksand, Poppins, sans-serif"
-          font-weight="800"
-          letter-spacing="1">
-      Almendra
-    </text>
-
-    <!-- SUBTITULO -->
-    <text x="272" y="205"
-          fill="#6f7a6f"
-          font-size="28"
-          font-family="Nunito, sans-serif"
-          font-weight="500"
-          letter-spacing="2">
-      diseño frontend · experiencia de usuario
-    </text>
-
+  <!-- Gotas y micropatículas en tonos tierra suaves y rosas -->
+  <g fill="#F3D1C9" opacity="0.7">
+    <circle cx="340" cy="80" r="3" class="p-1" />
+    <circle cx="260" cy="240" r="1.5" class="p-2" />
+    <circle cx="1060" cy="100" r="4" class="p-1" fill="#EADBC8" />
+    <circle cx="1280" cy="280" r="2" class="p-2" />
   </g>
 
+  <!-- ================= COMPOSICIÓN TIPOGRÁFICA REORGANIZADA ================= -->
+  <!-- Tipografía Outfit limpia, estructura ordenada y sin punto final -->
+  <g transform="translate(700, 215)" text-anchor="middle">
+    
+    <!-- TÍTULO PRINCIPAL: Arriba con jerarquía absoluta -->
+    <text x="0" y="5" class="brand-title">Almendra</text>
+    
+    <!-- Divisora mínima y sofisticada -->
+    <g transform="translate(0, 32)" opacity="0.5">
+      <line x1="-50" y1="0" x2="50" y2="0" stroke="#B3937A" stroke-width="1.25" />
+      <circle cx="-50" cy="0" r="1.5" fill="#F3D1C9" />
+      <circle cx="50" cy="0" r="1.5" fill="#F3D1C9" />
+    </g>
+
+    <!-- TEXTO SECUNDARIO: Abajo, balanceado y limpio -->
+    <text x="0" y="70" class="brand-tag">diseño frontend y experiencia de usuario</text>
+  </g>
+
+  <!-- Capa de textura de grano de papel -->
+  <rect width="1400" height="450" fill="none" filter="url(#paper-texture)" style="mix-blend-mode: multiply;" />
 </svg>
