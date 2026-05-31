@@ -10,8 +10,6 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&color=0:d7b8b6,100:5f7055&height=3" />
 </p>
 
-
-
 # Descripción
 
 **Almendra** es un proyecto de diseño y desarrollo frontend inspirado en una identidad visual cálida, artesanal y moderna.
