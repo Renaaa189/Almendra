@@ -1,6 +1,6 @@
 <p align="center">
   <img src="imagenes/banner.svg" alt="Renata Gallucci Banner"/>
-</p>
+</p> 
 
 <p align="center">
   Sitio web desarrollado para una pastelería artesanal ficticia
